@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Text } from "react-native";
 import SpotifyCard from "./src/shared/spotify-card";
 
 export default class App extends React.Component {
@@ -37,7 +37,11 @@ export default class App extends React.Component {
     ];
     return (
       <View style={styles.container}>
+        <View>
+          <Text>teste</Text>
+        </View>
         <FlatList
+          horizontal={true}
           data={param}
           renderItem={({ item }) => this.getMusicTemplate(item)}
           keyExtractor={(item, index) => item.id.toString()}
